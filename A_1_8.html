@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lightbox Gallery</title>
+    <style>
+      body {
+        background: #f4f4f4;
+        margin: 0;
+        font-family: "Verdana", sans-serif;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        max-width: 900px;
+        margin: 30px auto;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+      }
+      .gallery img:hover {
+        transform: scale(1.05);
+      }
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+      }
+      .close-lightbox {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <img src="GT.jpeg" alt="Gallery Image" />
+      <img src="GT1.webp" alt="Gallery Image" />
+      <img src="gt2.jpeg" alt="Gallery Image" />
+    </div>
+    <div class="lightbox">
+      <span class="close-lightbox">&times;</span>
+      <img src="" alt="Large View" />
+    </div>
+    <script>
+      const galleryItems = document.querySelectorAll(".gallery img");
+      const lightbox = document.querySelector(".lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+      const closeBtn = document.querySelector(".close-lightbox");
+
+      galleryItems.forEach((img) => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation Bar</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      nav {
+        background: #333;
+        color: white;
+        padding: 30px 20px 40px 1000px;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      nav ul li {
+        margin-right: 20px;
+      }
+      nav ul li a {
+        color: white;
+        padding: 15px;
+        text-decoration: none;
+      }
+      nav ul li a:hover {
+        color: #ff9800;
+      }
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      @media (max-width: 600px) {
+        nav ul {
+          flex-direction: column;
+          display: none;
+        }
+        nav ul.active {
+          display: flex;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <span class="hamburger" onclick="toggleMenu()">☰</span>
+      <ul id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <script>
+      function toggleMenu() {
+        document.getElementById("nav-links").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

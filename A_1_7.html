@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonial Section</title>
+    <style>
+      body {
+        background: #333;
+        color: #fff;
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .testimonial-section {
+        max-width: 1200px;
+        margin: 50px auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+      }
+      .testimonial {
+        flex: 0 0 45%;
+        background: #444;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: left;
+      }
+      .testimonial p {
+        font-style: italic;
+        margin: 10px 0;
+      }
+      @media (max-width: 768px) {
+        .testimonial {
+          flex: 1 0 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testimonial-section">
+      <div class="testimonial">
+        <h3>Dharun</h3>
+        <p>"Absolutely amazing experience, exceeded all expectations!"</p>
+      </div>
+      <div class="testimonial">
+        <h3>Pradeep</h3>
+        <p>"Highly recommend! Incredible service and dedication."</p>
+      </div>
+    </div>
+  </body>
+</html>

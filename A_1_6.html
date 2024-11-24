@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post Layout</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #eef1f5;
+    }
+    .blog-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+    }
+    .main-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .main-content h1, .main-content h2 {
+      margin: 10px 0;
+    }
+    .main-content p {
+      margin-bottom: 10px;
+    }
+    .sidebar {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      margin-bottom: 8px;
+    }
+    @media (max-width: 768px) {
+      .blog-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="blog-container">
+    <div class="main-content">
+      <h1>Another Blog Title</h1>
+      <h2>Interesting Subtitle Here</h2>
+      <p>Fascinating content goes here with compelling information that captures the audience's attention. Every paragraph builds on the last.</p>
+    </div>
+    <div class="sidebar">
+      <h3>Popular Posts</h3>
+      <ul>
+        <li><a href="#">Cool Post</a></li>
+        <li><a href="#">Another Cool Post</a></li>
+        <li><a href="#">Yet Another Cool Post</a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
